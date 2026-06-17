@@ -16,10 +16,12 @@ export const metadata: Metadata = {
 
 const nav = [
   { href: "/benchmark", label: "Benchmark" },
-  { href: "/vs", label: "vs Fable & Kimi" },
+  { href: "/vs", label: "Compare" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/review", label: "Review" },
   { href: "/coding-plan", label: "Coding Plan" },
   { href: "/ollama", label: "Run Locally" },
+  { href: "/huggingface", label: "HuggingFace" },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
-  title: "GLM 5.2 vs Claude Fable vs Kimi 2.7 — Coding Model Comparison 2026",
-  description: "Detailed comparison of GLM 5.2, Claude Fable, and Kimi 2.7. Which coding AI wins on benchmark, price, speed, and real-world tasks?",
+  title: "GLM 5.2 vs Claude Fable vs Kimi 2.7 vs Kimi K2.7 — Coding Model Comparison 2026",
+  description: "Detailed comparison of GLM 5.2, Claude Fable, Kimi 2.7, and Kimi K2.7. Which coding AI wins on benchmark, price, speed, and real-world tasks?",
 };
 
 const compareRows = [
-  { feature: "Developer", glm: "Zhipu AI", fable: "Anthropic", kimi: "Moonshot AI" },
-  { feature: "Context Window", glm: "128K", fable: "200K", kimi: "128K" },
-  { feature: "HumanEval", glm: "92.1%", fable: "94.3%", kimi: "90.8%" },
-  { feature: "LiveCodeBench", glm: "68.4%", fable: "71.2%", kimi: "66.9%" },
-  { feature: "SWE-bench", glm: "51.2%", fable: "55.1%", kimi: "49.7%" },
-  { feature: "Input price (per 1M tok)", glm: "$0.14", fable: "$3.00", kimi: "$0.12" },
-  { feature: "Output price (per 1M tok)", glm: "$0.28", fable: "$15.00", kimi: "$0.30" },
-  { feature: "Speed (tokens/sec)", glm: "~85", fable: "~70", kimi: "~90" },
-  { feature: "Open weights", glm: "✅ HuggingFace", fable: "❌", kimi: "❌" },
-  { feature: "Coding Plan feature", glm: "✅", fable: "✅ (extended thinking)", kimi: "✅" },
-  { feature: "OpenRouter access", glm: "✅", fable: "✅", kimi: "✅" },
-  { feature: "Ollama / local run", glm: "✅", fable: "❌", kimi: "❌" },
+  { feature: "Developer", glm: "Zhipu AI", fable: "Anthropic", kimi: "Moonshot AI", kimik: "Moonshot AI" },
+  { feature: "Context Window", glm: "128K", fable: "200K", kimi: "128K", kimik: "128K" },
+  { feature: "HumanEval", glm: "92.1%", fable: "94.3%", kimi: "90.8%", kimik: "91.5%" },
+  { feature: "LiveCodeBench", glm: "68.4%", fable: "71.2%", kimi: "66.9%", kimik: "69.1%" },
+  { feature: "SWE-bench", glm: "51.2%", fable: "55.1%", kimi: "49.7%", kimik: "53.8%" },
+  { feature: "Input price (per 1M tok)", glm: "$0.14", fable: "$3.00", kimi: "$0.12", kimik: "$0.15" },
+  { feature: "Output price (per 1M tok)", glm: "$0.28", fable: "$15.00", kimi: "$0.30", kimik: "$0.60" },
+  { feature: "Speed (tokens/sec)", glm: "~85", fable: "~70", kimi: "~90", kimik: "~75" },
+  { feature: "Open weights", glm: "✅ HuggingFace", fable: "❌", kimi: "❌", kimik: "❌" },
+  { feature: "Coding Plan feature", glm: "✅", fable: "✅ (extended thinking)", kimi: "✅", kimik: "✅" },
+  { feature: "OpenRouter access", glm: "✅", fable: "✅", kimi: "✅", kimik: "✅" },
+  { feature: "Ollama / local run", glm: "✅", fable: "❌", kimi: "❌", kimik: "❌" },
 ];
 
 const winners = [
@@ -38,7 +38,7 @@ const colorMap: Record<string, string> = {
 export default function VsPage() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-2">GLM 5.2 vs Claude Fable vs Kimi 2.7</h1>
+      <h1 className="text-3xl font-bold mb-2">GLM 5.2 vs Claude Fable vs Kimi 2.7 vs Kimi K2.7</h1>
       <p className="text-gray-500 mb-8">Full comparison across coding benchmarks, pricing, speed, and features — June 2026</p>
 
       <AdUnit slot="4444444444" />
@@ -66,6 +66,7 @@ export default function VsPage() {
                 <th className="text-center py-3 px-4 font-bold text-blue-700 bg-blue-50">GLM 5.2</th>
                 <th className="text-center py-3 px-4 font-bold text-orange-700">Claude Fable</th>
                 <th className="text-center py-3 px-4 font-bold text-purple-700">Kimi 2.7</th>
+                <th className="text-center py-3 px-4 font-bold text-green-700">Kimi K2.7</th>
               </tr>
             </thead>
             <tbody>
@@ -75,6 +76,7 @@ export default function VsPage() {
                   <td className="text-center py-3 px-4 bg-blue-50/40">{row.glm}</td>
                   <td className="text-center py-3 px-4">{row.fable}</td>
                   <td className="text-center py-3 px-4">{row.kimi}</td>
+                  <td className="text-center py-3 px-4">{(row as {kimik?: string}).kimik ?? "—"}</td>
                 </tr>
               ))}
             </tbody>
