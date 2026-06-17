@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://glm52.pro
+
+# Sitemaps
+Sitemap: https://glm52.pro/sitemap.xml
