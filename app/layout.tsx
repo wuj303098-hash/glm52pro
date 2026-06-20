@@ -45,13 +45,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('js', new Date());
           gtag('config', 'G-CSE2XCL4CR');
         `}</Script>
-        {/* Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your publisher ID */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
       </head>
       <body className="min-h-screen flex flex-col bg-white text-gray-900">
         <header className="border-b border-gray-200 sticky top-0 bg-white z-10">

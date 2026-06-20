@@ -35,7 +35,7 @@ export default function CodingPlanPage() {
         <p className="text-gray-600 mb-3">Prompt: <em>&quot;Create a FastAPI todo app with SQLite, authentication, and tests.&quot;</em></p>
 
         <div className="bg-gray-900 text-green-400 rounded-xl p-5 text-sm font-mono mb-4 overflow-x-auto">
-          <div className="text-gray-400 mb-3">// GLM 5.2 Coding Plan output:</div>
+          <div className="text-gray-400 mb-3">{"// GLM 5.2 Coding Plan output:"}</div>
           <div className="text-yellow-300 mb-2">📋 CODING PLAN</div>
           <div className="mb-1">Files to create (6 total):</div>
           <div className="text-gray-300 space-y-1 ml-2">
