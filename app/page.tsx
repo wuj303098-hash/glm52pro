@@ -3,93 +3,144 @@ import Link from "next/link";
 import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
-  title: "GLM 5.2 — Zhipu AI's Coding Model: Benchmark, Pricing & Guide",
-  description: "Complete independent guide to GLM 5.2 by Zhipu AI. Benchmark scores, API pricing, coding plan feature, comparisons vs Claude Fable and Kimi 2.7.",
+  title: "GLM 5.2 API, OpenRouter, Pricing and Coding Guide",
+  description:
+    "Independent GLM 5.2 guide covering the Z.ai API, OpenRouter model ID, 1M-token context, pricing, OpenCode setup, benchmarks, and local deployment.",
 };
 
-const highlights = [
-  { icon: "🏆", title: "Benchmark", desc: "HumanEval, LiveCodeBench scores vs top models", href: "/benchmark" },
-  { icon: "⚔️", title: "vs Fable & Kimi 2.7", desc: "Side-by-side comparison on coding, speed & price", href: "/vs" },
-  { icon: "💰", title: "API Pricing", desc: "Full cost breakdown, free tier & OpenRouter rates", href: "/pricing" },
-  { icon: "🧑‍💻", title: "Coding Plan", desc: "How GLM 5.2's planning feature works with real examples", href: "/coding-plan" },
-  { icon: "🖥️", title: "Run Locally (Ollama)", desc: "Step-by-step guide to run GLM 5.2 on your machine", href: "/ollama" },
-  { icon: "🔌", title: "OpenCode Setup", desc: "Use GLM 5.2 as your OpenCode backend", href: "/opencode" },
+const quickFacts = [
+  { label: "Model ID", value: "z-ai/glm-5.2" },
+  { label: "Context", value: "1M tokens" },
+  { label: "OpenRouter input", value: "$1.20 / 1M" },
+  { label: "OpenRouter output", value: "$4.10 / 1M" },
+  { label: "Official API", value: "api.z.ai" },
+  { label: "Open weights", value: "zai-org/GLM-5.2" },
 ];
 
-const quickFacts = [
-  { label: "Developer", value: "Zhipu AI (智谱AI)" },
-  { label: "Release", value: "June 2026" },
-  { label: "Context Window", value: "128K tokens" },
-  { label: "Specialty", value: "Coding & Planning" },
-  { label: "API Access", value: "Z.ai + OpenRouter" },
-  { label: "Open Source", value: "Weights on HuggingFace" },
+const primaryGuides = [
+  {
+    title: "GLM5.2 API",
+    desc: "Official Z.ai endpoint, model IDs, curl examples, context facts, and pricing notes.",
+    href: "/glm5.2-api",
+  },
+  {
+    title: "OpenRouter",
+    desc: "Use z-ai/glm-5.2 through OpenRouter with the OpenAI-compatible API.",
+    href: "/openrouter",
+  },
+  {
+    title: "OpenCode Setup",
+    desc: "Updated OpenCode config for OpenRouter and direct Z.ai coding endpoints.",
+    href: "/opencode",
+  },
+  {
+    title: "Pricing",
+    desc: "Current GLM 5.2 API pricing and tradeoffs for agentic coding workloads.",
+    href: "/pricing",
+  },
+];
+
+const secondaryGuides = [
+  { title: "Benchmarks", href: "/benchmark" },
+  { title: "Compare Models", href: "/vs" },
+  { title: "Coding Plan", href: "/coding-plan" },
+  { title: "HuggingFace", href: "/huggingface" },
+  { title: "Local Deployment", href: "/ollama" },
+  { title: "Review", href: "/review" },
 ];
 
 export default function Home() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
-      <section className="text-center mb-12">
-        <div className="inline-block bg-blue-50 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full mb-4">
-          Independent Guide · Not affiliated with Zhipu AI
+    <div className="mx-auto max-w-6xl px-4 py-10">
+      <section className="mb-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div>
+          <div className="mb-4 inline-flex rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">
+            Independent GLM 5.2 developer guide
+          </div>
+          <h1 className="mb-4 text-4xl font-bold leading-tight text-gray-950 md:text-5xl">
+            GLM5.2 API and OpenRouter setup for developers
+          </h1>
+          <p className="mb-6 max-w-2xl text-lg leading-8 text-gray-600">
+            Current facts for GLM 5.2: 1M-token context, model ID z-ai/glm-5.2,
+            Z.ai API endpoints, OpenRouter access, OpenCode config, and pricing.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/glm5.2-api"
+              className="rounded-lg bg-blue-700 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-800"
+            >
+              GLM5.2 API
+            </Link>
+            <Link
+              href="/openrouter"
+              className="rounded-lg border border-gray-300 px-5 py-3 font-semibold text-gray-800 transition-colors hover:border-blue-400 hover:text-blue-700"
+            >
+              OpenRouter guide
+            </Link>
+          </div>
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          GLM 5.2: Everything You Need to Know
-        </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Zhipu AI&apos;s flagship coding model. Benchmarks, pricing, comparisons, and how-to guides — all in one place.
-        </p>
-        <div className="flex gap-3 justify-center mt-6 flex-wrap">
-          <Link href="/benchmark" className="bg-blue-700 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-800 transition-colors">
-            See Benchmarks
-          </Link>
-          <Link href="/vs" className="border border-gray-300 text-gray-700 px-5 py-2.5 rounded-lg font-semibold hover:border-gray-400 transition-colors">
-            Compare Models
-          </Link>
-          <Link href="/pricing" className="border border-gray-300 text-gray-700 px-5 py-2.5 rounded-lg font-semibold hover:border-gray-400 transition-colors">
-            View Pricing
-          </Link>
+
+        <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5">
+          <div className="mb-4 text-sm font-semibold text-gray-500">Current setup snapshot</div>
+          <div className="space-y-3 text-sm">
+            <div className="rounded-lg bg-white p-4 font-mono text-gray-800">
+              model: z-ai/glm-5.2
+              <br />
+              context: 1M-token context
+              <br />
+              baseURL: https://openrouter.ai/api/v1
+            </div>
+            <div className="rounded-lg bg-white p-4 font-mono text-gray-800">
+              model: glm-5.2
+              <br />
+              baseURL: https://api.z.ai/api/paas/v4
+            </div>
+          </div>
         </div>
       </section>
 
       <AdUnit slot="1234567890" />
 
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">Quick Facts</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <h2 className="mb-5 text-2xl font-bold text-gray-950">Quick Facts</h2>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {quickFacts.map(({ label, value }) => (
-            <div key={label} className="border border-gray-200 rounded-lg p-4">
-              <div className="text-sm text-gray-500 mb-1">{label}</div>
-              <div className="font-semibold text-gray-900">{value}</div>
+            <div key={label} className="rounded-xl border border-gray-200 p-4">
+              <div className="mb-1 text-sm text-gray-500">{label}</div>
+              <div className="font-semibold text-gray-950">{value}</div>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6">What is GLM 5.2?</h2>
-        <div className="text-gray-700 space-y-4">
-          <p>
-            <strong>GLM 5.2</strong> is a large language model developed by <strong>Zhipu AI (智谱AI)</strong>, released in June 2026. It is designed specifically to excel at coding tasks, including multi-file planning, code generation, debugging, and agentic coding workflows.
-          </p>
-          <p>
-            The model features a unique <strong>&quot;Coding Plan&quot;</strong> capability — before writing code, it creates a structured plan across multiple files, similar to how a senior engineer would approach a complex task. This has attracted significant attention from developers using tools like <strong>OpenCode</strong> and <strong>Ollama</strong>.
-          </p>
-          <p>
-            GLM 5.2 is available through the <strong>Z.ai API</strong> and <strong>OpenRouter</strong>, and model weights are published on <strong>HuggingFace</strong> for local deployment. It competes directly with <strong>Claude Fable</strong> and <strong>Kimi 2.7</strong> in the coding model space.
-          </p>
+        <h2 className="mb-5 text-2xl font-bold text-gray-950">Start Here</h2>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {primaryGuides.map(({ title, desc, href }) => (
+            <Link
+              key={href}
+              href={href}
+              className="rounded-xl border border-gray-200 p-5 transition-all hover:border-blue-400 hover:bg-blue-50"
+            >
+              <div className="mb-2 text-lg font-semibold text-gray-950">{title}</div>
+              <div className="text-sm leading-6 text-gray-600">{desc}</div>
+            </Link>
+          ))}
         </div>
       </section>
 
       <AdUnit slot="0987654321" />
 
       <section>
-        <h2 className="text-2xl font-bold mb-6">Explore GLM 5.2</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {highlights.map(({ icon, title, desc, href }) => (
-            <Link key={href} href={href} className="border border-gray-200 rounded-xl p-5 hover:border-blue-400 hover:shadow-sm transition-all group">
-              <div className="text-2xl mb-2">{icon}</div>
-              <div className="font-semibold text-gray-900 group-hover:text-blue-700 mb-1">{title}</div>
-              <div className="text-sm text-gray-500">{desc}</div>
+        <h2 className="mb-5 text-2xl font-bold text-gray-950">Explore GLM 5.2</h2>
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+          {secondaryGuides.map(({ title, href }) => (
+            <Link
+              key={href}
+              href={href}
+              className="rounded-lg border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:border-blue-300 hover:text-blue-700"
+            >
+              {title}
             </Link>
           ))}
         </div>

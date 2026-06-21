@@ -2,26 +2,26 @@ import type { Metadata } from "next";
 import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
-  title: "GLM 5.2 vs DeepSWE — Coding Agent Comparison 2026",
-  description: "Compare GLM 5.2 and DeepSWE on SWE-bench, coding tasks, API cost, and real-world use cases. Which AI coding agent should you use?",
+  title: "GLM 5.2 vs DeepSWE: Coding Agent Comparison 2026",
+  description:
+    "Compare GLM 5.2 and DeepSWE on coding tasks, API access, OpenCode compatibility, local deployment, and real-world use cases.",
 };
 
 const compare = [
-  { feature: "Type", glm: "General + Coding LLM", deep: "Specialized SWE Agent" },
-  { feature: "SWE-bench Verified", glm: "51.2%", deep: "~57% (reported)" },
-  { feature: "HumanEval", glm: "92.1%", deep: "N/A (agent, not chat)" },
-  { feature: "API Cost (output)", glm: "$0.28 / 1M tok", deep: "Higher (agent overhead)" },
-  { feature: "Local deployment", glm: "✅ Ollama / HuggingFace", deep: "❌ API only" },
-  { feature: "Chat interface", glm: "✅ Full chat + code", deep: "⚠️ Task-focused only" },
-  { feature: "OpenCode compatible", glm: "✅", deep: "❌" },
-  { feature: "Best for", glm: "General coding + chat", deep: "Automated repo-level fixes" },
+  { feature: "Type", glm: "General and coding LLM", deep: "Specialized SWE agent" },
+  { feature: "Context", glm: "1M tokens", deep: "Task dependent" },
+  { feature: "API cost", glm: "$1.20 input / $4.10 output on OpenRouter", deep: "Agent overhead varies" },
+  { feature: "Local deployment", glm: "vLLM, SGLang, Transformers", deep: "API focused" },
+  { feature: "Chat interface", glm: "Full chat and code", deep: "Task-focused" },
+  { feature: "OpenCode compatible", glm: "Yes", deep: "No" },
+  { feature: "Best for", glm: "General coding and chat", deep: "Automated repo-level fixes" },
 ];
 
 export default function DeepSWEPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold mb-2">GLM 5.2 vs DeepSWE</h1>
-      <p className="text-gray-500 mb-8">Two different approaches to AI-assisted coding — here&apos;s how they compare</p>
+      <p className="text-gray-500 mb-8">Two different approaches to AI-assisted coding.</p>
 
       <AdUnit slot="7788990011" />
 
@@ -29,10 +29,12 @@ export default function DeepSWEPage() {
         <h2 className="text-2xl font-bold mb-4">What is DeepSWE?</h2>
         <div className="text-gray-700 space-y-3">
           <p>
-            <strong>DeepSWE</strong> is a specialized AI coding <em>agent</em> optimized for solving real GitHub issues autonomously. Unlike GLM 5.2 which is a general-purpose LLM with strong coding capabilities, DeepSWE is designed to operate like a software engineer: reading repos, writing patches, and running tests — all without human input.
+            DeepSWE is a specialized AI coding agent optimized for solving repository issues autonomously.
+            GLM 5.2 is a long-context LLM that can be used interactively through chat, OpenCode, direct APIs, or local serving.
           </p>
           <p>
-            It scores highly on <strong>SWE-bench Verified</strong>, a benchmark that tests whether an AI can fix real open-source bugs. However, it is not a conversational model — you can&apos;t chat with it, use it in OpenCode, or run it locally.
+            The practical choice depends on the workflow. Use DeepSWE for autonomous issue resolution.
+            Use GLM 5.2 when you need a model inside an everyday coding workflow.
           </p>
         </div>
       </section>
@@ -63,36 +65,11 @@ export default function DeepSWEPage() {
 
       <AdUnit slot="8899001122" />
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">When to Use Each</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
-            <div className="font-bold text-blue-900 mb-3">Choose GLM 5.2 when:</div>
-            <ul className="text-sm text-blue-800 space-y-2">
-              <li>• You want to <strong>chat + code</strong> interactively</li>
-              <li>• Using <strong>OpenCode, Cursor, or API</strong> in your workflow</li>
-              <li>• You need <strong>local / offline</strong> capability</li>
-              <li>• Budget matters — cheap per token</li>
-              <li>• You want a <strong>general assistant</strong> that also codes well</li>
-            </ul>
-          </div>
-          <div className="bg-purple-50 border border-purple-200 rounded-xl p-5">
-            <div className="font-bold text-purple-900 mb-3">Choose DeepSWE when:</div>
-            <ul className="text-sm text-purple-800 space-y-2">
-              <li>• You want <strong>fully autonomous</strong> bug fixing</li>
-              <li>• You have a <strong>GitHub repo</strong> with issues to resolve</li>
-              <li>• You can hand off a task and come back later</li>
-              <li>• SWE-bench score is your primary metric</li>
-              <li>• You don&apos;t need interactive conversation</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-gray-50 rounded-xl p-6">
         <h2 className="text-xl font-bold mb-2">Bottom Line</h2>
         <p className="text-gray-700">
-          GLM 5.2 and DeepSWE solve different problems. <strong>GLM 5.2 is a coding-first LLM</strong> you integrate into your daily workflow. <strong>DeepSWE is an autonomous agent</strong> for batch issue resolution. Most developers will find GLM 5.2 more versatile — it handles 90% of coding tasks interactively at a fraction of the cost, and also runs locally.
+          GLM 5.2 and DeepSWE solve different problems. GLM 5.2 is a coding-first LLM for chat,
+          OpenCode, APIs, and local serving. DeepSWE is an autonomous agent for batch issue resolution.
         </p>
       </section>
 
